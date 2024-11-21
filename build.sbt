@@ -1,4 +1,4 @@
-ThisBuild / kantanProject := "csv"
+// ThisBuild / kantanProject := "csv"
 ThisBuild / startYear     := Some(2015)
 
 lazy val jsModules: Seq[ProjectReference] = Seq(
@@ -40,30 +40,31 @@ lazy val root = Project(id = "kantan-csv", base = file("."))
       |import kantan.csv.refined._
     """.stripMargin
   )
-  .aggregate((jsModules ++ jvmModules :+ (docs: ProjectReference)): _*)
+  // .aggregate((jsModules ++ jvmModules :+ (docs: ProjectReference)): _*)
+  .aggregate((jsModules ++ jvmModules): _*)
   .dependsOn(coreJVM, genericJVM, libra, refinedJVM, enumeratumJVM)
 
-lazy val docs = project
-  .enablePlugins(DocumentationPlugin)
-  .settings(name := "docs")
-  .settings(
-    ScalaUnidoc / unidoc / unidocProjectFilter :=
-      inAnyProject -- inProjects(benchmark) -- inProjects(jsModules: _*)
-  )
-  .settings(libraryDependencies += "joda-time" % "joda-time" % Versions.jodaTime)
-  .dependsOn(
-    coreJVM,
-    java8,
-    lawsJVM,
-    libra,
-    catsJVM,
-    scalazJVM,
-    genericJVM,
-    jackson,
-    commons,
-    refinedJVM,
-    enumeratumJVM
-  )
+// lazy val docs = project
+//   .enablePlugins(DocumentationPlugin)
+//   .settings(name := "docs")
+//   .settings(
+//     ScalaUnidoc / unidoc / unidocProjectFilter :=
+//       inAnyProject -- inProjects(benchmark) -- inProjects(jsModules: _*)
+//   )
+//   .settings(libraryDependencies += "joda-time" % "joda-time" % Versions.jodaTime)
+//   .dependsOn(
+//     coreJVM,
+//     java8,
+//     lawsJVM,
+//     libra,
+//     catsJVM,
+//     scalazJVM,
+//     genericJVM,
+//     jackson,
+//     commons,
+//     refinedJVM,
+//     enumeratumJVM
+//   )
 
 lazy val benchmark = project
   .enablePlugins(UnpublishedPlugin, JmhPlugin)
