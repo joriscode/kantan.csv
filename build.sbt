@@ -1,7 +1,7 @@
-ThisBuild / kantanProject := "csv"
+ThisBuild / kantanProject := "kantan.csv"
 ThisBuild / startYear     := Some(2015)
 
-ThisBuild / resolvers += "Github: kantan.sbt" at "https://maven.pkg.github.com/joriscode/kantan.sbt"
+ThisBuild / resolvers += "Github: kantan.codecs" at "https://maven.pkg.github.com/joriscode/kantan.codecs"
 
 lazy val jsModules: Seq[ProjectReference] = Seq(
   catsJS,
