@@ -1,8 +1,6 @@
 ThisBuild / kantanProject := "csv"
 ThisBuild / startYear     := Some(2015)
 
-ThisBuild / resolvers += "Github packages codecs" at "https://maven.pkg.github.com/joriscode/kantan.codecs"
-
 lazy val jsModules: Seq[ProjectReference] = Seq(
   catsJS,
   coreJS,

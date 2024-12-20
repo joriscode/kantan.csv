@@ -12,4 +12,5 @@ credentials += Credentials(
   }
 )
 
-resolvers += "Github packages" at "https://maven.pkg.github.com/joriscode/kantan.sbt"
+ThisBuild / resolvers += "Github packages sbt" at "https://maven.pkg.github.com/joriscode/kantan.sbt"
+ThisBuild / resolvers += "Github packages codecs" at "https://maven.pkg.github.com/joriscode/kantan.codecs"
