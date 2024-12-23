@@ -1,5 +1,6 @@
 name: CI
 on:
+  workflow_dispatch:
   push:
     branches: [master, develop]
   pull_request:
@@ -48,4 +49,4 @@ jobs:
         if: matrix.platform == 'js'
         run: sbt ++${{ matrix.scala }} validateJS
     env:
-      GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
+      GITHUB_TOKEN: ${{ secrets.READ_WRITE_PACKAGES }}

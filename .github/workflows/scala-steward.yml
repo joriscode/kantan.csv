@@ -19,9 +19,9 @@ jobs:
       - name: Scala Steward GitHub Action
         uses: scala-steward-org/scala-steward-action@v2.71.0
         with:
-          github-token: ${{ secrets.PUBLISH_TOKEN }}
+          github-token: ${{ secrets.READ_WRITE_PACKAGES }} # Scala Steward needs it to open PRs
           author-name: Scala Steward
           author-email: 2750485+joriscode@users.noreply.github.com
           branches: ${{ github.event_name == 'workflow_dispatch' && github.ref_name || 'master' }}
     env:
-      GITHUB_TOKEN: ${{ secrets.PUBLISH_TOKEN }} # Needed for to access Github packages
+      GITHUB_TOKEN: ${{ secrets.READ_WRITE_PACKAGES }} # Sbt reads it to resolve Github packages
