@@ -21,7 +21,6 @@ lazy val jvmModules: Seq[ProjectReference] = Seq(
   enumeratumJVM,
   genericJVM,
   jackson,
-  // java8,
   lawsJVM,
   libra,
   refinedJVM,
@@ -55,7 +54,6 @@ lazy val docs = project
   .settings(libraryDependencies += "joda-time" % "joda-time" % Versions.jodaTime)
   .dependsOn(
     coreJVM,
-    // java8,
     lawsJVM,
     libra,
     catsJVM,
@@ -172,21 +170,6 @@ lazy val cats = kantanCrossProject("cats")
 
 lazy val catsJVM = cats.jvm
 lazy val catsJS  = cats.js
-
-// - java8 projects ----------------------------------------------------------------------------------------------------
-// ---------------------------------------------------------------------------------------------------------------------
-// lazy val java8 = project
-//   .settings(
-//     moduleName := "kantan.csv-java8",
-//     name       := "java8"
-//   )
-//   .dependsOn(coreJVM/*, lawsJVM % Test*/)
-//   .settings(
-//     libraryDependencies ++= Seq(
-//       "com.nrinaudo" %% "kantan.codecs-java8"      % Versions.kantanCodecs,
-//       "com.nrinaudo" %% "kantan.codecs-java8-laws" % Versions.kantanCodecs % Test
-//     )
-//   )
 
 // - refined project ---------------------------------------------------------------------------------------------------
 // ---------------------------------------------------------------------------------------------------------------------
