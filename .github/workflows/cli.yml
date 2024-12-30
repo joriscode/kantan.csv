@@ -47,3 +47,5 @@ jobs:
       - name: Test JS
         if: matrix.platform == 'js'
         run: sbt ++${{ matrix.scala }} validateJS
+    env:
+      GITHUB_TOKEN: ${{ secrets.READ_WRITE_PACKAGES }}
