@@ -16,14 +16,20 @@
 
 package kantan.csv.benchmark
 
-import java.io.StringWriter
-import java.util.concurrent.TimeUnit
 import kantan.csv.engine.WriterEngine
 import kantan.csv.engine.jackson.defaultSequenceWriterBuilder
 import kantan.csv.ops._
 import kantan.csv.rfc
 import org.apache.commons.csv.CSVFormat
-import org.openjdk.jmh.annotations.{Benchmark, BenchmarkMode, Mode, OutputTimeUnit, Scope, State}
+import org.openjdk.jmh.annotations.Benchmark
+import org.openjdk.jmh.annotations.BenchmarkMode
+import org.openjdk.jmh.annotations.Mode
+import org.openjdk.jmh.annotations.OutputTimeUnit
+import org.openjdk.jmh.annotations.Scope
+import org.openjdk.jmh.annotations.State
+
+import java.io.StringWriter
+import java.util.concurrent.TimeUnit
 
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
